@@ -1,5 +1,5 @@
 class PostSerializer < ActiveModel::Serializer
   attributes :title, :content
   belongs_to :author
-  has_many :tags
+  has_many :tags, through: :post_tags, serializer: PostTagSerializer
 end
